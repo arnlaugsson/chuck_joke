@@ -10,7 +10,6 @@ public class Chuck {
 
     public String random() {
         Joke randomJoke = client.getRandom();
-	String s = "ss";
         return randomJoke.getJoke();
     }
 
