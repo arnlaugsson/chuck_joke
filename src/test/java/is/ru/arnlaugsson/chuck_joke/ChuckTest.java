@@ -13,4 +13,11 @@ public class ChuckTest {
         Chuck chuck = new Chuck();
         assertThat(chuck.random(), containsString("Chuck Norris"));
     }
+   
+   @Test
+    public void HelloWorld() {
+        HelloWorld w = new HelloWorld();
+        assertThat(w.greet(),containsString("Hell"));
+    }
+
 }
