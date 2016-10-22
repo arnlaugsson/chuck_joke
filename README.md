@@ -1,3 +1,4 @@
+[![Build Status](AgustOrnEinarsson hello world from jon ingi)](https://travis-ci.org/AgustOrnEinarsson/chuck_joke)
 # chuck_joke
 (T-303-HUGB, Hugbúnaðarfræði, 2016-3)
 
