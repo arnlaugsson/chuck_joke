@@ -10,7 +10,7 @@ public class Chuck {
 
     public String random() {
         Joke randomJoke = client.getRandom();
-        return (randomJoke.getJoke() + "AND" + randomJoke.getJoke()) ;
+        return (randomJoke.getJoke() + " AND now with provider " + randomJoke.getJoke()) ;
     }
 
     public String getById(String input) {
