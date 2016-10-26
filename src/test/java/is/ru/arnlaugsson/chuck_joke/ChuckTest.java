@@ -17,7 +17,7 @@ public class ChuckTest {
     @Test
     public void randomJokeContainsName2() {
         Chuck chuck = new Chuck();
-        assertThat(chuck.random(), containsString("Chs Norris"));
+        assertThat(chuck.random(), containsString("Chuck Norris"));
     }
 
 }
