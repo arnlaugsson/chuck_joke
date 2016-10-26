@@ -19,5 +19,6 @@ public class ChuckTest {
         Chuck chuck = new Chuck();
         assertThat(chuck.random(), containsString("Chuck Norris"));
     }
+    //þetta er comment
 
 }
