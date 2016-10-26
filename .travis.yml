@@ -1,9 +1,8 @@
 language: java
-
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 deploy:
   provider: heroku
   app: young-river-97789
   api_key:
+    secure: X9HHG04oKGaZm2knjCcczWyMJbrK5yIzHY1XCSfVwDoa/pYDOU6GVav2MOkNSBpnQp60INRLTKKTeZfWXyHArbcR5tt+0JhisslWOm2L/ng690mEAGOJutEUUJ7/XbFJR5qq4pbNgnG1YFAu5x4r37hjskrxvOXp0RBP8L/lPs1P12FZ00nwLnueg1X+KoWi76A9HWR2RH30qsuZmKYNNN4EuumJtqvIL1BZU/MIlfvKPWowez21AZk8drbh2n2UDoUkNeD6tGST4+FOV3G2dLS8afCjOa9fE6F2o+vbJ9NLl5DQ4xyK/PQgynJkZsvdeIlJWNJwZRifzIn/mUeSxDn5l8t/YHQgd5xkypMKc5anDXRtPuma2FXaUm8fOY33Uw++klErdkff9SXIPiQZqEtMly83bAiil9zBs53CvlO4zTE1QKaC19YCC2Kl7FsIhSnezZs3Bx1mAu9LbxGlkXla+GP+TPmIDw1wh0/gytk+8emjJHBdMXyqkcyVR7jIS/aaucjeDwFEHjnynWiU8IXCtatm/NNmahyBIpUShhSzbSnzauA1bSPBExQ/9bwPIu5U30Cq0fD/ZNeHRibcAEd0ovTe6w6xJ+7c7grZhZX56iiV4a3Sk6CeXYaZcfZpjkRn/T5hQdsQ8kOS5xsXBhqUUBUzgeM9cAsAEIgy/3k=
