@@ -6,4 +6,4 @@ jdk:
 deploy:
   provider: heroku
   app: young-river-97789
-  api_key: Gata4110
+  api_key:
