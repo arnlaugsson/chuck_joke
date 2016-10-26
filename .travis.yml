@@ -2,3 +2,8 @@ language: java
 
 jdk:
   - oraclejdk8
+
+deploy:
+  provider: heroku
+  app: young-river-97789
+  api_key: Gata4110
