@@ -31,12 +31,11 @@ task stage {
     dependsOn installDist
 }
 
-task preTravisSelenium(type: Exec) {
+task preSeleniumTravis(type: Exec, dependsOn: installDist) {
     commandLine './bin/startServer'
 }
 
 task seleniumTravis(type: Test, dependsOn: installDist) {
-    dependsOn 'preTravisSelenium'
     testClassesDir = sourceSets.selenium.output.classesDir
     classpath = sourceSets.selenium.runtimeClasspath
 }

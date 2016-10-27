@@ -1,6 +1,7 @@
 language: java
 script:
   - "./gradlew check"
+  - "./bin/startServer"
   - "./gradlew seleniumTravis"
 jdk:
   - oraclejdk8
