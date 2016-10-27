@@ -5,5 +5,5 @@ script:
 jdk:
   - oraclejdk8
 before_script:
-  - rackup  # start a Web server
+  - ./gradlew run # start a Web server
   - sleep 3 # give Web server some time to bind to sockets, etc
