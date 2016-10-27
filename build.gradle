@@ -13,7 +13,7 @@ sourceSets {
 
 dependencies {
     // Application dependencies
-    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile 'org.slf4j:slf4j-simple:1.7.21'
     compile 'net.joningi:icndb-java-api:1.0'
     compile 'com.sparkjava:spark-core:2.5'
 
@@ -24,11 +24,21 @@ dependencies {
     seleniumCompile 'junit:junit:4.11'
     seleniumCompile 'org.seleniumhq.selenium:selenium-firefox-driver:3.0.1'
     seleniumCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.0.1'
-	seleniumCompile 'com.codeborne:phantomjsdriver:1.3.0'
+    seleniumCompile 'com.codeborne:phantomjsdriver:1.3.0'
 }
 
 task stage {
     dependsOn installDist
+}
+
+task preTravisSelenium(type: Exec) {
+    commandLine './bin/startServer'
+}
+
+task seleniumTravis(type: Test, dependsOn: installDist) {
+    dependsOn 'preTravisSelenium'
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
 }
 
 task selenium(type: Test, dependsOn: installDist) {

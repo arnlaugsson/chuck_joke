@@ -1,9 +1,12 @@
 language: java
 script:
-  - ./gradlew check
-  - ./gradlew selenium
+  - "./gradlew check"
+  - "./gradlew seleniumTravis"
 jdk:
   - oraclejdk8
-before_script:
-  - ./gradlew run # start a Web server
-  - sleep 3 # give Web server some time to bind to sockets, etc
+deploy:
+  provider: heroku
+  api_key:
+    secure: C2rRHxoMhzI1hRdCVpA/IHR+A5pIwjkOMMvT5cC73XmSi7DpQBv4wgdTd2RS/mMd6QwnyMHi0xEYn50zL7PxitIKYYFA4XSlttMURg+0eOGbubDlX1YAHBZ2mAKH9gi2a6G1up+fZTtMf5lIWXAg91Mp2Pnh75+gTUJKxouVa4vvcoO98DU42fZzLC6aOrRrYT+PuS8Yt2DgSB9N8uNnXtv6zTmIw9DzwpwYUpsL9YH0Z+M9JS5gvrO0TviC8edMdazbBFLz0Qd+em+7O6NAIws8+qOhxEurzo6kaNpMMY/2qmM7ZJyw13KAvXVGfs0cnV0rOsgduEnA9KIwH075RWlpoXDBgWkLvQLYzCiqUAvUYf6LyL+vUERMtf6PckIOK8mPfZx/Fr60iJYXth+RD6i+ul0mF+/bxI5e/MJbf95XWFrJ/D/MoG26nvt4y/V5OYdnSZ5kIRKINffm76UXF3I0M4bOppyv4juvh/VjmXYpSv3Ew7Sk0xkUKkU6FZgmEem8bfCGStXbLZpi9U14bBC1URtcKQyYHiFzj+uM4/HFhgneSRLRJJ16PmalgSWVQ31jXvouJupACfVNhG5caN66sHaaMS4EpALJImT92DohVYG8n6KmAvez5sqGSIqXThOzgc/LlOFFhHu/U+TZ1VsaWanbHBG7FJT4xk4VBbo=
+  app:
+    master: master-chuckjoke

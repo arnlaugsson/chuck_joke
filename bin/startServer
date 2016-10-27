@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./build/install/chuck_joke/bin/chuck_joke &

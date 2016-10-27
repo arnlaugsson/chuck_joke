@@ -6,7 +6,6 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
-
 public abstract class SeleniumTestWrapper {
     //static ChromeDriver driver;
     static PhantomJSDriver driver;
