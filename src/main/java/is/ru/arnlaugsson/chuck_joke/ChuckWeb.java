@@ -22,7 +22,7 @@ public class ChuckWeb implements SparkApplication {
     @Override
     public void init() {
         final Chuck chuck = new Chuck();    
-        post("/random", (req, res) -> chuck.random());
+        post("/random", (req, res) -> "brynjar");
         post("/id", (req, res) -> chuck.getById(req.queryParams("id")));
         post("/setName", (req, res) -> {
             chuck.alterName(
