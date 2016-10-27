@@ -14,7 +14,7 @@ public class ChuckWeb implements SparkApplication {
         String port = System.getenv("PORT");
         if (port != null) {
             port(Integer.valueOf(port));
-        }
+        }//Þetta er comment
 
         chuckweb.init();
     }
