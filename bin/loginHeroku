@@ -8,5 +8,9 @@ echo "machine api.heroku.com" >> ~/.netrc
 echo "   login ${HEROKU_API_LOGIN}" >> ~/.netrc
 echo "   password ${HEROKU_API_KEY}" >> ~/.netrc
 
+echo "machine git.heroku.com" >> ~/.netrc
+echo "   login ${HEROKU_API_LOGIN}" >> ~/.netrc
+echo "   password ${HEROKU_API_KEY}" >> ~/.netrc
+
 echo "netrc looks like:"
 cat ~/.netrc
