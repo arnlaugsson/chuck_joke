@@ -1,4 +1,4 @@
 #!/bin/bash
 
-git remote add heroku git@heroku.com:staging-chuckjoke.git
-git push heroku master
+heroku git:remote -a staging-chuckjoke -r staging
+git push staging master
