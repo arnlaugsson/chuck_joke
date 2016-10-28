@@ -1,13 +1,20 @@
 language: java
 script:
-  - "./gradlew check"
-  - "./bin/startServer"
-  - "./gradlew seleniumTravis"
+- "./gradlew check"
+- "./gradlew selenium"
 jdk:
-  - oraclejdk8
+- oraclejdk8
 deploy:
   provider: heroku
   api_key:
     secure: C2rRHxoMhzI1hRdCVpA/IHR+A5pIwjkOMMvT5cC73XmSi7DpQBv4wgdTd2RS/mMd6QwnyMHi0xEYn50zL7PxitIKYYFA4XSlttMURg+0eOGbubDlX1YAHBZ2mAKH9gi2a6G1up+fZTtMf5lIWXAg91Mp2Pnh75+gTUJKxouVa4vvcoO98DU42fZzLC6aOrRrYT+PuS8Yt2DgSB9N8uNnXtv6zTmIw9DzwpwYUpsL9YH0Z+M9JS5gvrO0TviC8edMdazbBFLz0Qd+em+7O6NAIws8+qOhxEurzo6kaNpMMY/2qmM7ZJyw13KAvXVGfs0cnV0rOsgduEnA9KIwH075RWlpoXDBgWkLvQLYzCiqUAvUYf6LyL+vUERMtf6PckIOK8mPfZx/Fr60iJYXth+RD6i+ul0mF+/bxI5e/MJbf95XWFrJ/D/MoG26nvt4y/V5OYdnSZ5kIRKINffm76UXF3I0M4bOppyv4juvh/VjmXYpSv3Ew7Sk0xkUKkU6FZgmEem8bfCGStXbLZpi9U14bBC1URtcKQyYHiFzj+uM4/HFhgneSRLRJJ16PmalgSWVQ31jXvouJupACfVNhG5caN66sHaaMS4EpALJImT92DohVYG8n6KmAvez5sqGSIqXThOzgc/LlOFFhHu/U+TZ1VsaWanbHBG7FJT4xk4VBbo=
   app:
     master: master-chuckjoke
+sudo: required
+before_script:
+  - "./bin/setupHeroku"
+  - "./bin/deployStaging"
+env:
+  global:
+  - secure: rGIddvG5ajRwbjvhKn1sj3dWQGBKla2nThGlLJWxIeIVXTqrWzsWgOT81WUkEDrneY5MgUKcZ6j4X0ZKfB1JQzKLvDs9iI/6+ZMvl1vEmkHVIPy3BSuZGJ+0R26hcwwhTtQ2FO9+wfI3SolfNwP7SZsaHp3gM3Pkg2fPfaxcfSwfKU2/fe8doERgjacG3sTAG4IucyjD6V3O4MG+FuuGvtO46vu/KVsw/oifvXigEmlaegMYbY2Iu1LamEDb5zvSuYBC/cH6J8dMOa/+ktmxqkrgahGBm/U06XAzZ0N346qGGNvwSRjtAxdkdCcwnpVIZXD7TgWaCjVrH4yLEuABXwZ+vtglc2VLBwBMRb7WZutxmng4ihoxROYrUu0D2g8JSMgjZQbVJCWQcqUfoh7JPYhvHgpey8YLzcj0B/x/HODOKhOJlYWOIAfPJ7fWAGJsJUFsgUfV+DN8SxYum5cAhE9+ZmpUlv2Z0hIkrQzcjFaY9GX75KFwxe2np0Q3RWzt6DLN9IQ0fSer6VnxzQ/GkYE5z7OvwdQ/QSs/GPWQXmzmc5q8jR5fnqUK5diP0CuFt1+jAzvL/ShVTn1of7uZLoD+AibEL7Mo+zWOInxvWOnrjqHJ7CfJ5p3DTWrhR/mV9jXgqG7g2VfvtRVy3fre8Y01NXMRTYJNiVhEe5xokbY=
+  - secure: lza7PG2ehc5Z7/5txoBs5O4AEWmlR9sig3pHAjt77+uk9JwIuMQJs7qhTlGA2devCpVxpDUZaN705gv/wPUz6ZcNmuhS0pNPpTLlvNVdZAUEYYWqFAayG9/z0/MZhwbcqNvxqHKXLMPiw2RqzegfgNquwvZ66HjlVxE8XfkOFBdVi1p2ttzuyhOFqV5oGEqMLUdgNyBuHjNmQ9llK5slcBKzjDMiFM/Z9tlknq4miDceZY4Lz8PTQ9Fv7tZusH1D4T21jOa6lk+IyzIHN0Q04yQEbnFGKqLFeGV3kBzsZ2gkWQqhgIF/Leg4fqTlcb9s3m8cuQ8c0+h8MniUmGIKW/elH8sZHIbD2Qr44yaEwYEnERh35DYGorU6/+oCOglOxestJxzA7FBu8XO1lqWLHN/DQdFO7Zyrx5jBTOfKNt5Ww2pYJCPodSZsbxNHw9w8RQrXH1eJtBvrpC2RlGBNDMfsncw906ffHhc6wcm/37X/bUX/cBO3iDQG5KjxP57qMgwyeb9K2VsN0FZ78U5Rzv0K3WOsLrhjkWGXWrgb1qZXiVwEgrtmCXLTuzz7F8ef/QdL81wk8njE/HiEtgSRyWK6m3VcBCYPDfFRhHqPcU4iW0muLwZbpdOssZ678WCCO69pOky/VjvFq3xOwlPV1lXgder+xay9raLU2qAmPO4=

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+TARGET_APP_NAME="staging-chuckjoke"
+
+git remote add $TARGET_APP_NAME git@heroku.com:$TARGET_APP_NAME.git
+git push $TARGET_APP_NAME master
