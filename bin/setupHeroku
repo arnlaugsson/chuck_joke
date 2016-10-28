@@ -8,13 +8,9 @@ Host heroku.com
    UserKnownHostsFile=/dev/null
 EOF
 
-  # DOC: https://devcenter.heroku.com/articles/authentication#usage-examples
-  cat >> ~/.netrc <<EOF
-machine api.heroku.com
-  login ${HEROKU_API_LOGIN}
-  password ${HEROKU_API_KEY}
-EOF
-  chmod 600 ~/.netrc
-
   echo "Installing heroku toolbelt"
-  gem install heroku
+  wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+  heroku login
+  send "$HEROKU_API_LOGIN"
+  send "$HEROKU_API_KEY"
