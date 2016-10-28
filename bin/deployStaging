@@ -1,4 +1,7 @@
 #!/bin/bash
 
+echo "Current branch: "
+echo $TRAVIS_BRANCH 
+
 heroku git:remote -a staging-chuckjoke -r staging
-git push staging master
+git push staging +$TRAVIS_BRANCH:master
