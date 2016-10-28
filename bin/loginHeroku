@@ -1,8 +1,5 @@
 #!/bin/bash
 
-HEROKU_API_LOGIN="hilmart@gmail.com"
-HEROKU_API_KEY="95f8e6c7-fc47-4576-ab49-1e59f9458b3b"
-
 echo "Inserting authentication to netrc"
 echo "machine api.heroku.com" >> ~/.netrc
 echo "   login ${HEROKU_API_LOGIN}" >> ~/.netrc
@@ -11,6 +8,3 @@ echo "   password ${HEROKU_API_KEY}" >> ~/.netrc
 echo "machine git.heroku.com" >> ~/.netrc
 echo "   login ${HEROKU_API_LOGIN}" >> ~/.netrc
 echo "   password ${HEROKU_API_KEY}" >> ~/.netrc
-
-echo "netrc looks like:"
-cat ~/.netrc
