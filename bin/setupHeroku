@@ -6,5 +6,5 @@ echo "   StrictHostKeyChecking no" >> ~/.ssh/config
 echo "   CheckHostIP no" >> ~/.ssh/config
 echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 
-echo "Installing heroku toolbelt"
+echo "Installing Heroku Toolbelt..."
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
