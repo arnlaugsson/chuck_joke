@@ -13,6 +13,7 @@ deploy:
 sudo: required
 before_script:
   - "./bin/setupHeroku"
+  - "./bin/loginHeroku"
   - "./bin/deployStaging"
 env:
   global:

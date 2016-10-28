@@ -1,16 +1,10 @@
 #!/bin/bash
 
-  echo "Setting up '~/.ssh/config' to work with heroku."
-  cat >> ~/.ssh/config <<EOF
-Host heroku.com
-   StrictHostKeyChecking no
-   CheckHostIP no
-   UserKnownHostsFile=/dev/null
-EOF
+echo "Setting up '~/.ssh/config' to work with heroku."
+echo "Host heroku.com" >> ~/.ssh/config
+echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+echo "   CheckHostIP no" >> ~/.ssh/config
+echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
 
-  echo "Installing heroku toolbelt"
-  wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-
-  heroku login
-  $HEROKU_API_LOGIN
-  $HEROKU_API_KEY
+echo "Installing heroku toolbelt"
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
