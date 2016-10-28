@@ -1,0 +1,5 @@
+#!/bin/bash
+
+./gradlew installDist
+
+./build/install/chuck_joke/bin/chuck_joke &
