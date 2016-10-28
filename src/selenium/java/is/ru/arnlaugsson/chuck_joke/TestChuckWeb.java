@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.concurrent.TimeUnit;
 
 public class TestChuckWeb extends SeleniumTestWrapper {
@@ -16,6 +18,7 @@ public class TestChuckWeb extends SeleniumTestWrapper {
 
     @Test
     public void assertUpdatingNameChangesSpecificJoke() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get(baseUrl + "/config.html");
 
         String firstName = "Hilmar";
@@ -30,7 +33,9 @@ public class TestChuckWeb extends SeleniumTestWrapper {
         // Submit
         lastNameInputBox.sendKeys(Keys.ENTER);
 
-        WebElement resultsBox = driver.findElement(By.id("results"));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert-success")));
+
+        WebElement resultsBox = driver.findElement(By.className("alert-success"));
         assertEquals("Name set as: " + firstName + " " + lastName + ".", resultsBox.getText());
 
         // Go to Specific jokes page
@@ -41,6 +46,8 @@ public class TestChuckWeb extends SeleniumTestWrapper {
 
         // Submit
         numberBox.sendKeys(Keys.RETURN);
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert-success")));
 
         resultsBox = driver.findElement(By.className("alert-success"));
 
