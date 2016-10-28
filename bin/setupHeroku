@@ -12,5 +12,5 @@ EOF
   wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
   heroku login
-  send "$HEROKU_API_LOGIN"
-  send "$HEROKU_API_KEY"
+  $HEROKU_API_LOGIN
+  $HEROKU_API_KEY
