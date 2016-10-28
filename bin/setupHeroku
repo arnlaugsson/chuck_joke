@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e -o pipefail
-
   echo "Setting up '~/.ssh/config' to work with heroku."
   cat >> ~/.ssh/config <<EOF
 Host heroku.com
@@ -19,4 +17,4 @@ EOF
   chmod 600 ~/.netrc
 
   echo "Installing heroku toolbelt"
-  wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+  gem install heroku
